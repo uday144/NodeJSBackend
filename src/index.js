@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 
 const userRouter = require("./routes/userRoutes"); 
+const noteRouter = require("./routes/noteRoutes");
 
+app.use("/note", noteRouter);
 app.use("/users", userRouter);
 
 app.get("/", (req, res) =>{
